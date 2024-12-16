@@ -21,8 +21,7 @@ class CoingeckoService
         $context = stream_context_create($opts);
 
         $cryptoModel = new Cryptocurrency();
-        // Optionally truncate existing data
-        // $cryptoModel->truncate();
+        
 
         for ($page = 1; $page <= $totalPages; $page++) {
             $url = "$baseUrl?vs_currency=$vsCurrency&order=$order&per_page=$perPage&page=$page&sparkline=false";

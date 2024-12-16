@@ -25,7 +25,7 @@ class Cryptocurrency
 
     public function all($limit = 20, $sort = '')
     {
-        $allowed = ['name', 'symbol', 'current_price']; // engedélyezett mezők
+        $allowed = ['name', 'symbol', 'current_price'];
         $orderClause = "ORDER BY market_cap DESC";
 
         if ($sort) {

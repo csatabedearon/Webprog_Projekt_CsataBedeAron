@@ -4,8 +4,6 @@ class UpdateController
 {
     public function updatePrices()
     {
-        // Auth ellenőrzés optional, ha bárki frissíthet, akkor nem kell.
-        // Ha csak bejelentkezett user frissíthet:
         if (!isLoggedIn()) {
             redirect('?page=login');
         }
@@ -13,7 +11,7 @@ class UpdateController
         $service = new CoingeckoService();
         $service->updateCryptocurrencies();
 
-        // Miután lefutott a frissítés, visszairányítjuk mondjuk a kriptók listájára
+        // Miután lefutott a frissítés, visszairányítjuk a kriptók listájára
         redirect('?page=cryptocurrencies');
     }
 }

@@ -5,7 +5,6 @@ class CryptocurrencyController
     public function index()
     {
         $sort = $_GET['sort'] ?? '';
-        // Lapozáshoz 'p' paramétert használunk, nem 'page'-et!
         $p = $_GET['p'] ?? 1;
         $p = max(1, (int)$p);
 
@@ -40,13 +39,11 @@ class CryptocurrencyController
 
     public function show()
     {
-        // pl. $_GET['id'] alapján
         $id = $_GET['id'] ?? null;
         if ($id) {
             $crypto = new Cryptocurrency();
             $c = $crypto->find($id);
             if ($c) {
-                // Egyedi nézet vagy megjelenítés
                 echo "<h1>{$c['name']} ({$c['symbol']})</h1>";
                 echo "<p>Ár: {$c['current_price']}</p>";
             } else {

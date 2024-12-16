@@ -7,7 +7,6 @@
 <div style="margin-bottom:20px;display:flex;align-items:center;gap:10px;">
     <div>Rows</div>
     <form method="GET" style="display:inline;">
-        <!-- Megőrizzük a sort paramétert, és a route-ot (page=cryptocurrencies), lapozást újra 1-re állítjuk -->
         <input type="hidden" name="page" value="cryptocurrencies">
         <input type="hidden" name="p" value="1">
         <input type="hidden" name="sort" value="<?= htmlspecialchars($sort) ?>">
